@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="../css/Homepage.css">
+</head>
+<body>
+    <header>
+        <h1>Adaptive Quiz Engine</h1>
+    </header>
+    <nav>
+        <a href="Homepage.html">Home</a>
+        <a href="Quiz.html">Attempt a Quiz</a>
+        <a href="Progress.html">Track Your Progress</a>
+        <a href="Feedback.html">Feedback</a>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Welcome to the Adaptive Quiz Engine</h2>
+            <span class="homepage-text">
+        <p>
+            This project was to develop a generic quiz engine which could be used
+            to help support students on their degree modules. The quiz engine allows a
+            range of question types to be set up and automatically marked, and allow students
+            to track their progress. The provision of appropriate feedback in this system was
+            designed and implemented with appropriate algorithms.
+            <br>
+            <br>
+            The quiz utilises two specific algorithms in order to provide adaptive learning for
+            the user, to ensure that each user feels that their specific needs are being met.
+            These algorithms are detailed as the following:
+            <br>
+            <br>
+            <strong>Bayes' theorem:</strong> This is based on the principle that the probability of an event can
+            be updated as new evidence is presented, combining prior knowledge with new data to
+            refine predictions. In this quiz, the student's knowledge level can be updated as they answer questions,
+            combining prior knowledge of their abilities with their responses to refine the assessment of their understanding.
+            <br>
+            <br>
+            <strong>Computerized Adaptive Testing:</strong> This is based on the idea that a test can adapt in real-time
+            to the users ability level by selecting questions that are most appropriate for
+            their estimated skill level, resulting in a more efficient and personalised assessment.
+        </p>
+        </span>
+            <div class="Bayes-Theorem-Image">
+                <img src="../images/Bayes.png" alt="Bayes-Theorem">
+            </div>
+            <div class="CAT-Image">
+                <img src="../images/Computerized-Adaptive-Testing.png" alt="Computerized-Adaptive-Testing">
+            </div>
+        </section>
+        <button id="quiz-button">Click Here</button>
+    </main>
+</body>
+<script src="../js/practiceClick.js"></script>
+</html>

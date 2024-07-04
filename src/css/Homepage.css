@@ -1,0 +1,106 @@
+body {
+    font-family: "Sinhala MN", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-image: url('../images/Quiz_Header_Test.jpg');
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: left;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: deepskyblue;
+}
+
+main {
+    padding: 20px;
+}
+
+.homepage-text p {
+    text-align: left;
+    margin-right: 800px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.Bayes-Theorem-Image {
+    position: relative;
+    left: 800px;
+    bottom: 482px;
+    flex: 1;
+    text-align: right;
+}
+
+.Bayes-Theorem-Image img {
+    max-width: 30%;
+    height: auto;
+    display: block;
+}
+
+.CAT-Image {
+    position: relative;
+    left: 900px;
+    bottom: 500px;
+    flex: 1;
+    text-align: right;
+}
+
+.CAT-Image img {
+    max-width: 15%;
+    height: auto;
+    display: block;
+}
+
+#quiz-button {
+    position: relative;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    bottom: 600px;
+    left: 200px;
+    width: 150px;
+    height: 50px;
+    font-family: "Sinhala MN", sans-serif;
+    font-size: 14pt;
+    transition: background-color 0.3s;
+
+}
+#quiz-button button:hover {
+    background-color: #0056b3;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

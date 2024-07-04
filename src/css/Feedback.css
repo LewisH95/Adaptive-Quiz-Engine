@@ -1,0 +1,29 @@
+#feedback-container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+#feedback-container h2 {
+    text-align: center;
+    color: #333333;
+}
+
+#feedback-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    min-height: 100px;
+}
+
+#feedback-message {
+    margin: 0;
+    color: #555555;
+    white-space: pre-wrap;
+}
