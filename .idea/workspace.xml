@@ -5,12 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24ff1478-b064-4e5f-9734-e463727befd5" name="Changes" comment="First Commit">
+      <change afterPath="$PROJECT_DIR$/src/css/loginPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/html/loginPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/getProgress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/serverSetup.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/serverSetup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Quiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Quiz.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/Feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Feedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/Homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/Progress.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Progress.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/Quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Quiz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/getFeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/getFeedback.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/getQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/getQuestions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,24 +49,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/lewishamilton/Desktop/Individual Project &amp; Dissertation/Adaptive Quiz Engine/Adaptive Quiz Engine/src&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/lewishamilton/Desktop/Individual Project & Dissertation/Adaptive Quiz Engine/Adaptive Quiz Engine/src",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -56,7 +84,35 @@
       <option name="presentableId" value="Default" />
       <updated>1720080067132</updated>
       <workItem from="1720080068277" duration="978000" />
-      <workItem from="1720081133651" duration="199000" />
+      <workItem from="1720081133651" duration="2246000" />
+      <workItem from="1720084103003" duration="108000" />
+      <workItem from="1720084222037" duration="162000" />
+      <workItem from="1720084407637" duration="1172000" />
+      <workItem from="1720093191731" duration="4210000" />
+      <workItem from="1720175100157" duration="2592000" />
+      <workItem from="1720179801690" duration="480000" />
+      <workItem from="1720300845208" duration="288000" />
+      <workItem from="1720468165849" duration="3015000" />
+      <workItem from="1720476639942" duration="827000" />
+      <workItem from="1720490191511" duration="111000" />
+      <workItem from="1720536123151" duration="1992000" />
+      <workItem from="1720693028955" duration="556000" />
+      <workItem from="1720824747664" duration="335000" />
+      <workItem from="1720870321744" duration="3757000" />
+      <workItem from="1720875980017" duration="498000" />
+      <workItem from="1721073700856" duration="3079000" />
+      <workItem from="1721081326883" duration="995000" />
+      <workItem from="1721161433007" duration="4054000" />
+      <workItem from="1721167028669" duration="257000" />
+      <workItem from="1721295350697" duration="5109000" />
+      <workItem from="1721595060561" duration="624000" />
+      <workItem from="1721638512566" duration="1703000" />
+      <workItem from="1721657113081" duration="7836000" />
+      <workItem from="1721674502659" duration="943000" />
+      <workItem from="1721727053870" duration="2187000" />
+      <workItem from="1721729496800" duration="957000" />
+      <workItem from="1721731667804" duration="6516000" />
+      <workItem from="1721746422339" duration="9276000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -74,11 +130,46 @@
       <option name="project" value="LOCAL" />
       <updated>1720081210743</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1720081411278</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720081411278</updated>
+    </task>
+    <task id="LOCAL-00004" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1720081554609</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720081554609</updated>
+    </task>
+    <task id="LOCAL-00005" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1720081600760</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720081600760</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />

@@ -1,79 +1,64 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const path = require('path');
 const bodyParser = require('body-parser');
+const {response} = require("express");
 
-const app = express();
+const application = express();
 const port = 3000;
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/quizdb')
-    .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error('Could not connect to MongoDB:', err));
 
-// Middleware
-app.use(bodyParser.json());
-app.use(express.static('src')); // Serve static files from the 'src' directory
+application.use(bodyParser.json());
+application.use(express.static(path.join(__dirname, '../src')));
 
-// Question schema and model
-const questionSchema = new mongoose.Schema({
-    text: String,
-    options: [String],
-    answer: String,
-    difficulty: String
-});
-const Question = mongoose.model('Question', questionSchema);
-
-// API endpoint to fetch questions by difficulty
-app.get('/api/questions', (req, res) => {
-    const difficulty = req.query.difficulty;
-    Question.find({ difficulty: difficulty }, (err, questions) => {
-        if (err) {
-            res.status(500).send(err);
-        } else {
-            res.json(questions);
-        }
-    });
+// Hello World Front End Test Endpoint
+application.get('/hello', (req, res) => {
+    res.send('Hello World!');
 });
 
-// API endpoint to add new questions
-app.post('/api/questions', (req, res) => {
-    const question = new Question(req.body);
-    question.save((err, savedQuestion) => {
-        if (err) {
-            res.status(500).send(err);
-        } else {
-            res.status(201).json(savedQuestion);
-        }
-    });
+// Back End Hello World fetch test from Spring Endpoint
+application.get('/api/hello', async (req, res) => {
+    fetch('http://localhost:8080/api/hello')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Connection not complete");
+            }
+            return response.text();
+        })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(error => {
+            console.error("Error attempting to fetch message", error);
+            res.status(500).send('Error fetching message');
+
+        });
 });
 
-// API endpoint to fetch all questions (for initialization/testing)
-app.get('/api/all-questions', (req, res) => {
-    Question.find({}, (err, questions) => {
-        if (err) {
-            res.status(500).send(err);
-        } else {
-            res.json(questions);
-        }
-    });
+// Back end Hard Coded question fetch test from Spring Question Controller endpoint.
+application.get("/api/questionTest,", async (req, res) => {
+    fetch('http://localhost:8080/api/questionTest')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error: Question not found!")
+            }
+            return response.json();
+        })
+        .then(data => {
+            res.json(data);
+        })
+        .catch(error => {
+            console.error("Question not found.", error);
+            res.status(200).send("Question not found.")
+        })
+})
+
+
+// Server will respond with the Homepage.html first when the localhost is accessed.
+application.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../src/html/loginPage.html'));
 });
 
-// Start the server
-app.listen(port, () => {
+// Server Start
+application.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
 });
-
-// TEST QUESTIONS
-const sampleQuestions = [
-    { text: 'What is 2 + 2?', options: ['3', '4', '5', '6'], answer: '4', difficulty: 'easy' },
-];
-
-// Using async/await to insert sample questions
-(async () => {
-    try {
-        await Question.insertMany(sampleQuestions);
-        console.log('Sample questions inserted');
-    } catch (err) {
-        console.log('Error inserting sample questions:', err);
-    }
-})();

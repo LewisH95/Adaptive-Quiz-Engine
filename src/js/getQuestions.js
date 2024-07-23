@@ -1,82 +1,129 @@
-$(document).ready(function() {
-    let proficiency = {
-        easy: 1/3,
-        medium: 1/3,
-        difficult: 1/3
-    };
+document.addEventListener('DOMContentLoaded', function () {
+    const startQuizButton = document.getElementById('start-quiz-btn');
+    const questionBox = document.getElementById('question-container');
+    const quizSetup = document.getElementById('quiz-setup');
+    const quizSection = document.getElementById('quiz');
+    let currentQuestion = null;
+    let currentDifficulty = 'easy';
+    const username = localStorage.getItem('username'); // username
 
-    $('#start-quiz-btn').click(function() {
-        showNextQuestion();
-        $('#quiz-setup').hide();
-        $('#quiz').show();
-        $('#progress').show();
+    if (!username) {
+        window.location.href = 'login.html'; // Redirect to login.html if username is not in the database
+    }
+
+    startQuizButton.addEventListener('click', () => {
+        getProgress(username);
+        startQuiz();
     });
 
-    function showNextQuestion() {
-        const difficulty = selectDifficulty();
-        fetchQuestions(difficulty).then(displayQuestions);
+    function startQuiz() {
+        fetchQuestion()
+            .then(data => {
+                currentQuestion = data;
+                displayQuestion(data);
+                toggleSections();
+            })
+            .catch(error => console.error('Question could not be fetched: ', error));
     }
 
-    function fetchQuestions(difficulty) {
-        return $.ajax({
-            url: '/api/questions',
-            data: { difficulty: difficulty },
-            method: 'GET'
-        });
+    function fetchQuestion() {
+        return fetch(`http://localhost:8080/api/questionTest?difficulty=${currentDifficulty}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log('Fetched question data:', data);
+                return data;
+            })
+            .catch(error => console.error('Error fetching question:', error));
     }
 
-    function displayQuestions(questions) {
-        if (questions.length === 0) {
-            $('#question-container').html('<p>No questions available.</p>');
+    function toggleSections() {
+        quizSetup.style.display = 'none';
+        quizSection.style.display = 'block';
+    }
+
+    function displayQuestion(question) {
+        questionBox.innerHTML = ''; // Clear previous content
+
+        const questionText = document.createElement('p');
+        questionText.textContent = question.questionText;
+        questionBox.appendChild(questionText);
+
+        if (question.choices) {
+            question.choices.forEach(choice => {
+                const choiceLabel = document.createElement('label');
+                const choiceInput = document.createElement('input');
+                choiceInput.type = 'checkbox';
+                choiceInput.name = 'quiz-choice';
+                choiceInput.value = choice;
+
+                choiceLabel.appendChild(choiceInput);
+                choiceLabel.appendChild(document.createTextNode(choice));
+                questionBox.appendChild(choiceLabel);
+                questionBox.appendChild(document.createElement('br'));
+            });
+        }
+
+        const submitButton = document.createElement('button');
+        submitButton.textContent = 'Submit';
+        submitButton.id = 'submit-quiz-btn';
+        submitButton.addEventListener('click', submitAnswer);
+        questionBox.appendChild(submitButton);
+    }
+
+    function submitAnswer() {
+        const selectedAnswer = getSelectedChoice();
+        if (selectedAnswer === null) {
+            alert('Please select an answer before submitting!');
             return;
         }
 
-        const question = questions[Math.floor(Math.random() * questions.length)];
+        fetch(`http://localhost:8080/api/feedback?questionId=${currentQuestion.questionId}&userAnswer=${selectedAnswer}`)
+            .then(response => response.text())
+            .then(feedback => {
+                alert(feedback);
 
-        const questionHtml = `
-            <div class="question" data-difficulty="${question.difficulty}" data-answer="${question.answer}">
-                <h3>${question.text}</h3>
-                <ul class="options">
-                    ${question.options.map(option => `
-                        <li><label><input type="radio" name="question" value="${option}"> ${option}</label></li>
-                    `).join('')}
-                </ul>
-                <button class="submit-answer-btn">Submit Answer</button>
-            </div>
-        `;
+                const isCorrect = feedback.startsWith('Correct:');
 
-        $('#question-container').html(questionHtml);
+                fetch(`http://localhost:8080/api/updateProgress?userId=${username}&difficulty=${currentDifficulty}&correct=${isCorrect}`, {
+                    method: 'POST'
+                }).catch(error => console.error('Error updating progress:', error));
 
-        $('.submit-answer-btn').click(function() {
-            const selectedAnswer = $('input[name="question"]:checked').val();
-            const correctAnswer = $(this).closest('.question').data('answer');
-            const difficulty = $(this).closest('.question').data('difficulty');
-
-            updateBayesHypothesis(difficulty, selectedAnswer === correctAnswer);
-            showNextQuestion();
-        });
+                fetch(`http://localhost:8080/api/updateDifficulty?correct=${isCorrect}&currentDifficulty=${currentDifficulty}`)
+                    .then(response => response.text())
+                    .then(newDifficulty => {
+                        currentDifficulty = newDifficulty;
+                        fetchQuestion().then(data => {
+                            currentQuestion = data;
+                            displayQuestion(data);
+                            getProgress(username); // Fetch and display progress after each question
+                        }).catch(error => console.error('Error fetching question:', error));
+                    }).catch(error => console.error('Error updating difficulty:', error));
+            }).catch(error => console.error('Error fetching feedback:', error));
     }
 
-    function selectDifficulty() {
-        const random = Math.random();
-        if (random < proficiency.easy) {
-            return 'easy';
-        } else if (random < proficiency.easy + proficiency.medium) {
-            return 'medium';
-        } else {
-            return 'difficult';
+    function getSelectedChoice() {
+        const choices = document.getElementsByName('quiz-choice');
+        for (let i = 0; i < choices.length; i++) {
+            if (choices[i].checked) {
+                return choices[i].value;
+            }
         }
+        return null;
     }
 
-    function updateBayesHypothesis(difficulty, correct) {
-        const updateFactor = correct ? 1.1 : 0.9;
-        proficiency[difficulty] *= updateFactor;
-
-        const total = proficiency.easy + proficiency.medium + proficiency.difficult;
-        proficiency.easy /= total;
-        proficiency.medium /= total;
-        proficiency.difficult /= total;
-
-        $('#proficiency-level').text(`Estimated Skill Level: Easy (${(proficiency.easy * 100).toFixed(1)}%), Medium (${(proficiency.medium * 100).toFixed(1)}%), Hard (${(proficiency.difficult * 100).toFixed(1)}%)`);
+    function getProgress(username) {
+        fetch(`http://localhost:8080/api/users/username/${username}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('easy-score').textContent = `Easy: ${data.easyScore || 0}`;
+                document.getElementById('medium-score').textContent = `Medium: ${data.mediumScore || 0}`;
+                document.getElementById('hard-score').textContent = `Hard: ${data.hardScore || 0}`;
+            })
+            .catch(error => {
+                console.error('Cannot fetch progress:', error);
+                document.getElementById('easy-score').textContent = 'Unable to load progress';
+                document.getElementById('medium-score').textContent = 'Unable to load progress';
+                document.getElementById('hard-score').textContent = 'Unable to load progress';
+            });
     }
 });

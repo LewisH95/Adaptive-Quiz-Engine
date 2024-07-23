@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Quiz</title>
@@ -10,35 +10,25 @@
     <header>
         <h1>Attempt a Quiz!</h1>
     </header>
-    <nav>
-        <a href="Homepage.html">Home</a>
-        <a href="Quiz.html">Attempt a Quiz</a>
-        <a href="Progress.html">Track Your Progress</a>
-        <a href="Feedback.html">Feedback</a>
+    <nav id="homepage-navbar">
+        <a href="/html/Homepage.html">Home</a>
+        <a href="/html/Quiz.html">Attempt a Quiz</a>
+        <a href="/html/Progress.html">Track Your Progress</a>
+        <a href="/html/Feedback.html">Feedback</a>
     </nav>
+    <main>
+        <section id="quiz-setup">
+            <h2>Click below to start the quiz:</h2>
+            <button id="start-quiz-btn">Start Quiz</button>
+        </section>
+        <section id="quiz" style="display:none;">
+            <h2>Quiz</h2>
+            <div id="question-container">
+            </div>
+        </section>
+    </main>
+    <script src="../js/login.js"></script>
+    <script src="../js/getProgress.js"></script>
+    <script src="../js/getQuestions.js"></script>
 </body>
-<main>
-    <section id="quiz-setup">
-        <h2>Select an initial difficulty.</h2>
-        <label for="difficulty">Select Difficulty Level:</label>
-        <select id="difficulty">
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Hard">Hard</option>
-        </select>
-        <button id="start-quiz-btn">Start Quiz</button>
-    </section>
-    <section id="quiz" style="display:none;">
-        <h2>Quiz</h2>
-        <div id="question-container">
-            <!-- Questions will be dynamically inserted here -->
-        </div>
-        <button id="submit-quiz-btn" style="display:none;">Submit Quiz</button>
-    </section>
-    <section id="progress" style="display:none;">
-        <h2>Progress</h2>
-        <p id="proficiency-level">Estimated Proficiency Level: Unknown</p>
-    </section>
-</main>
-<script src="../js/getQuestions.js"></script>
 </html>
