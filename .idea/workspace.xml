@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24ff1478-b064-4e5f-9734-e463727befd5" name="Changes" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/src/css/loginPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/html/loginPage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/getProgress.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/js/login.js" afterDir="false" />
+    <list default="true" id="24ff1478-b064-4e5f-9734-e463727befd5" name="Changes" comment="Login,quiz,progress work - feedback not working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/serverSetup.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/serverSetup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/Homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/Quiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Quiz.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Feedback.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Feedback.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/html/Feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Feedback.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/Homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/Progress.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Progress.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/Quiz.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Quiz.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/getFeedback.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/getFeedback.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/getQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/getQuestions.js" afterDir="false" />
     </list>
@@ -49,23 +40,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/lewishamilton/Desktop/Individual Project & Dissertation/Adaptive Quiz Engine/Adaptive Quiz Engine/src",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/lewishamilton/Desktop/Individual Project &amp; Dissertation/Adaptive Quiz Engine/Adaptive Quiz Engine/src&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -112,7 +103,12 @@
       <workItem from="1721727053870" duration="2187000" />
       <workItem from="1721729496800" duration="957000" />
       <workItem from="1721731667804" duration="6516000" />
-      <workItem from="1721746422339" duration="9276000" />
+      <workItem from="1721746422339" duration="9497000" />
+      <workItem from="1721810040774" duration="4038000" />
+      <workItem from="1721822903037" duration="634000" />
+      <workItem from="1721896583746" duration="9811000" />
+      <workItem from="1721997164974" duration="1290000" />
+      <workItem from="1722184717724" duration="2900000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -154,7 +150,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720081600760</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Login,quiz,progress work - feedback not working">
+      <option name="closed" value="true" />
+      <created>1721758728168</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721758728168</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Login,quiz,progress work - feedback not working">
+      <option name="closed" value="true" />
+      <created>1721758757731</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721758757731</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +185,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="Login,quiz,progress work - feedback not working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login,quiz,progress work - feedback not working" />
   </component>
 </project>

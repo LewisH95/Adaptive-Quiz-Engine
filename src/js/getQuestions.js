@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     startQuizButton.addEventListener('click', () => {
+        // Clear previous feedback from localStorage
+        localStorage.removeItem('feedbackList');
+
         getProgress(username);
         startQuiz();
     });
@@ -82,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(feedback => {
                 alert(feedback);
 
+                // Save feedback to localStorage
+                saveFeedbackToLocalStorage(feedback);
+
                 const isCorrect = feedback.startsWith('Correct:');
 
                 fetch(`http://localhost:8080/api/updateProgress?userId=${username}&difficulty=${currentDifficulty}&correct=${isCorrect}`, {
@@ -95,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         fetchQuestion().then(data => {
                             currentQuestion = data;
                             displayQuestion(data);
-                            getProgress(username); // Fetch and display progress after each question
+                            getProgress(username);
                         }).catch(error => console.error('Error fetching question:', error));
                     }).catch(error => console.error('Error updating difficulty:', error));
             }).catch(error => console.error('Error fetching feedback:', error));
@@ -125,5 +131,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('medium-score').textContent = 'Unable to load progress';
                 document.getElementById('hard-score').textContent = 'Unable to load progress';
             });
+    }
+
+    function saveFeedbackToLocalStorage(feedback) {
+        const feedbackList = JSON.parse(localStorage.getItem('feedbackList')) || [];
+        feedbackList.push(feedback);
+        localStorage.setItem('feedbackList', JSON.stringify(feedbackList));
     }
 });
