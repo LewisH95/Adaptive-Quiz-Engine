@@ -1,3 +1,4 @@
+// I think this file is named incorrectly - it does much more than get the question, I'd probably either split this file into much smaller parts or rename it to encapsulate it all. 
 document.addEventListener('DOMContentLoaded', function () {
     const startQuizButton = document.getElementById('start-quiz-btn');
     const questionBox = document.getElementById('question-container');
