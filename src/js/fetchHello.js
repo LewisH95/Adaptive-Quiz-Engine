@@ -1,4 +1,4 @@
-
+// toDo: I guess this needs deleting.
 document.addEventListener("DOMContentLoaded", function () {
     const quizButton = document.getElementById("quiz-button");
     quizButton.addEventListener("click", fetchHelloWorld);
