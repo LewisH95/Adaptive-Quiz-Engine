@@ -8,16 +8,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const username = localStorage.getItem('username'); // username
 
     if (!username) {
-        window.location.href = 'login.html'; // Redirect to login.html if username is not in the database
+        window.location.href = 'login.html'; // Redirect to loginPage.html if username is not in the database
     }
 
     startQuizButton.addEventListener('click', () => {
         // Clear previous feedback from localStorage
         localStorage.removeItem('feedbackList');
 
-        getProgress(username);
-        startQuiz();
+        resetAlgorithm()
+            .then(() => {
+                getProgress(username);
+                startQuiz();
+            })
+            .catch(error => console.error("Unable to reset the algorithm:", error));
+
+
     });
+
+
+    function resetAlgorithm() {
+        return fetch("http://localhost:8080/api/resetStreaks", {
+            method: "POST"
+        })
+    }
 
     function startQuiz() {
         fetchQuestion()
@@ -30,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function fetchQuestion() {
-        return fetch(`http://localhost:8080/api/questionTest?difficulty=${currentDifficulty}`)
+        return fetch(`http://localhost:8080/api/getQuestion?difficulty=${currentDifficulty}`)
             .then(response => response.json())
             .then(data => {
                 console.log('Fetched question data:', data);
