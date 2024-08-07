@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="24ff1478-b064-4e5f-9734-e463727befd5" name="Changes" comment="Working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Feedback.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Feedback.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/Homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/loginPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/Quiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Quiz.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/html/Feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Feedback.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/getQuestions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/getQuestions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +114,12 @@
       <workItem from="1722260857760" duration="10150000" />
       <workItem from="1722286580975" duration="904000" />
       <workItem from="1722287584334" duration="20000" />
-      <workItem from="1722332705841" duration="2608000" />
+      <workItem from="1722332705841" duration="2732000" />
+      <workItem from="1722599878576" duration="712000" />
+      <workItem from="1722782155846" duration="4734000" />
+      <workItem from="1722881611498" duration="1167000" />
+      <workItem from="1722890693945" duration="980000" />
+      <workItem from="1723028753161" duration="2211000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -178,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722195955060</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Working">
+      <option name="closed" value="true" />
+      <created>1722351041892</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1722351041892</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

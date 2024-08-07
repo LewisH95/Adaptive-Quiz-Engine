@@ -35,27 +35,26 @@
 
 #quiz {
     text-align: center;
-    margin-top: 20px;
     font-size: 20px;
 }
 
 #quiz h2 {
-    margin-top: 70px;
+    margin-top: 30px;
     font-size: 30px;
 }
 
 
 #question-container {
-    margin-top: 45px;
-    font-size: 26px;
-    padding: 20px;
+    margin-top: 30px;
+    font-size: 32px;
     border-radius: 5px;
-    background-color: #ffffff;
+
 }
 
 .question {
-    margin-bottom: 20px;
-    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 22px;
     padding: 20px;
     border: 1px solid #cccccc;
     border-radius: 5px;

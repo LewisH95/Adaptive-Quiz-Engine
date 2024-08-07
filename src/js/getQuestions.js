@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function submitAnswer() {
         const selectedAnswer = getSelectedChoice();
+
         if (selectedAnswer === null) {
-            alert('Please select an answer before submitting!');
             return;
         }
 
@@ -122,12 +122,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function getSelectedChoice() {
         const choices = document.getElementsByName('quiz-choice');
+        let choice;
+        let numberOfSelections = 0;
+
         for (let i = 0; i < choices.length; i++) {
             if (choices[i].checked) {
-                return choices[i].value;
+                numberOfSelections ++;
+                choice = choices[i].value;
             }
         }
-        return null;
+
+        if (numberOfSelections > 1 || numberOfSelections === 0 || numberOfSelections === null) {
+            alert('Please select one answer before submitting!');
+            choice = null;
+        }
+
+        return choice;
     }
 
     function getProgress(username) {
