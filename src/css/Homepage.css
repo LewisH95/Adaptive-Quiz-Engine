@@ -1,12 +1,12 @@
 body {
-    font-family: "Arial", sans-serif; /* Changed to Arial for better readability */
-    font-size: 15px; /* Increased font size for better readability */
-    line-height: 1.6; /* Improved line height for better text spacing */
+    font-family: "Arial", sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4; /* Light background color to reduce eye strain */
-    color: #333; /* Dark text color for better contrast */
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
@@ -27,12 +27,12 @@ header {
     padding: 14px 130px;
     text-decoration: none;
     text-align: center;
-    font-size: 1.1em; /* Slightly larger text for better readability */
+    font-size: 1.1em;
 }
 
 #homepage-navbar a:hover {
-    background-color: #555; /* More accessible hover color */
-    color: white; /* Maintained text color for hover effect */
+    background-color: #555;
+    color: white;
 }
 
 #login-navbar {
@@ -46,22 +46,26 @@ header {
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
-    font-size: 1.1em; /* Slightly larger text for better readability */
+    font-size: 1.1em;
 }
 
 #login-navbar a:hover {
-    background-color: #555; /* More accessible hover color */
-    color: white; /* Maintained text color for hover effect */
+    background-color: #555;
+    color: white;
 }
 
 main {
     padding: 20px;
 }
 
+#home h2 {
+    text-align: center;
+
+}
+
 .homepage-text p {
-    text-align: left; /* Align text to the left for better readability */
-    margin-right: 800px; /* Maintain the existing margin */
-    font-size: 1.2em; /* Slightly larger text */
+    text-align: left;
+    font-size: 1.4em;
 }
 
 .content {
@@ -74,20 +78,6 @@ main {
     flex: 1;
 }
 
-.Bayes-Theorem-Image {
-    position: relative;
-    left: 700px; /* Maintain the existing left position */
-    width: 2000px; /* Maintain the existing width */
-    bottom: 482px; /* Maintain the existing bottom position */
-    flex: 1;
-    text-align: right; /* Maintain text alignment */
-}
-
-.Bayes-Theorem-Image img {
-    max-width: 30%; /* Ensure image doesn't stretch too much */
-    height: auto;
-    display: block;
-}
 
 footer {
     background-color: #333;
@@ -97,5 +87,5 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    font-size: 1em; /* Increased font size for footer text */
+    font-size: 1em;
 }
