@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     localStorage.setItem('username', username);
                     window.location.href = '/html/homepage.html'; // Redirect to homepage
                 } else {
+                    alert('Invalid username or password. Please try again.');
                     loginError.textContent = 'Invalid username or password. Please try again.';
                 }
             })

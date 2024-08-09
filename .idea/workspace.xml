@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24ff1478-b064-4e5f-9734-e463727befd5" name="Changes" comment="Working">
+    <list default="true" id="24ff1478-b064-4e5f-9734-e463727befd5" name="Changes" comment="Final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/Homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/loginPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/loginPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/Homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/Homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/loginPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/fetchHello.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/practiceClick.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +119,9 @@
       <workItem from="1723048617807" duration="236000" />
       <workItem from="1723061047655" duration="1544000" />
       <workItem from="1723068977944" duration="241000" />
-      <workItem from="1723122856372" duration="2126000" />
+      <workItem from="1723122856372" duration="2209000" />
+      <workItem from="1723130221003" duration="239000" />
+      <workItem from="1723235787208" duration="85000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -206,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723048787219</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Final">
+      <option name="closed" value="true" />
+      <created>1723128638088</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723128638088</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +232,7 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Login,quiz,progress work - feedback not working" />
     <MESSAGE value="Working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working" />
+    <MESSAGE value="Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final" />
   </component>
 </project>
