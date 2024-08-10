@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'login.html'; // Redirect to loginPage.html if username is not in the database
     }
 
+    /**
+     * Handles the start quiz button click event.
+     * Resets the algorithm, clears previous feedback, and starts the quiz.
+     */
+
     startQuizButton.addEventListener('click', () => {
         // Clear previous feedback from localStorage
         localStorage.removeItem('feedbackList');
@@ -25,13 +30,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-
+    /**
+     * resetAlgorithm makes a request to reset the user's progress and streaks on the backend.
+     *
+     * @returns {Promise} - Resolves if the algorithm reset is successful.
+     */
     function resetAlgorithm() {
         return fetch("http://localhost:8080/api/resetStreaks", {
             method: "POST"
         })
     }
-
+    /**
+     * Starts the quiz by fetching the first question and displaying it.
+     */
     function startQuiz() {
         fetchQuestion()
             .then(data => {
@@ -41,7 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => console.error('Question could not be fetched: ', error));
     }
-
+    /**
+     * Fetches a question from the backend based on the current difficulty level.
+     *
+     * @returns {Promise<Object>} - The fetched question object.
+     */
     function fetchQuestion() {
         return fetch(`http://localhost:8080/api/getQuestion?difficulty=${currentDifficulty}`)
             .then(response => response.json())
@@ -51,12 +66,18 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .catch(error => console.error('Error fetching question:', error));
     }
-
+    /**
+     * Toggles the display sections to show the quiz interface and hide the setup interface.
+     */
     function toggleSections() {
         quizSetup.style.display = 'none';
         quizSection.style.display = 'block';
     }
-
+    /**
+     * Displays the fetched question and its choices in the quiz container.
+     *
+     * @param {Object} question - The question object to be displayed.
+     */
     function displayQuestion(question) {
         questionBox.innerHTML = ''; // Clear previous content
 
@@ -85,7 +106,10 @@ document.addEventListener('DOMContentLoaded', function () {
         submitButton.addEventListener('click', submitAnswer);
         questionBox.appendChild(submitButton);
     }
-
+    /**
+     * Submits the user's selected answer and processes the feedback.
+     * Updates the quiz difficulty and progress based on the user's performance.
+     */
     function submitAnswer() {
         const selectedAnswer = getSelectedChoice();
 
@@ -119,7 +143,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     }).catch(error => console.error('Error updating difficulty:', error));
             }).catch(error => console.error('Error fetching feedback:', error));
     }
-
+    /**
+     * Retrieves the selected answer from the list of choices.
+     *
+     * @returns {string|null} - The selected answer or null if no valid choice is selected.
+     */
     function getSelectedChoice() {
         const choices = document.getElementsByName('quiz-choice');
         let choice;
@@ -139,7 +167,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return choice;
     }
-
     function getProgress(username) {
         fetch(`http://localhost:8080/api/users/username/${username}`)
             .then(response => response.json())
@@ -155,7 +182,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('hard-score').textContent = 'Unable to load progress';
             });
     }
-
+    /**
+     * Saves the feedback for the user's answer to local storage.
+     *
+     * @param {string} feedback - The feedback text to be saved.
+     */
     function saveFeedbackToLocalStorage(feedback) {
         const feedbackList = JSON.parse(localStorage.getItem('feedbackList')) || [];
         feedbackList.push(feedback);

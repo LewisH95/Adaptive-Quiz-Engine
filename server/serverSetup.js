@@ -1,3 +1,9 @@
+/**
+ * Express server serving static frontend content for the adaptive quiz engine.
+ * This contains early tests for the front end and back end connections
+ * It ensures that when the LocalHost is accessed the loginPage.html is received from the server.
+ */
+
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
