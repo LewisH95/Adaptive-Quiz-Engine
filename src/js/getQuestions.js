@@ -1,3 +1,9 @@
+/**
+ * getQuestions.js manages the quiz functionalities for the web application.
+ * The script handles starting the quiz, fetching and displaying questions based on difficulty using methods from the backend
+ * via the API, this involves processing user answers, and updating user progress. It also manages user session and
+ * provides feedback on answers while interacting with the backend services.
+ */
 document.addEventListener('DOMContentLoaded', function () {
     const startQuizButton = document.getElementById('start-quiz-btn');
     const questionBox = document.getElementById('question-container');
